@@ -1,4 +1,4 @@
-from fabric.api import sudo, cd, env, task, execute
+from fabric.api import sudo, run, cd, env, task, execute
 from fabric.colors import red, white, green
 
 # the user to use for the remote commands
@@ -10,14 +10,14 @@ env.code_root = '/home/deploy/www/mia/src'
 
 def update_code():
     with cd(env.code_root):
-        sudo('git remote prune origin')
-        sudo('git pull origin master')
-        sudo("git clean -ffd")
+        run('git remote prune origin')
+        run('git pull origin master')
+        run("git clean -ffd")
 
 
 def install_deps():
     with cd(env.code_root):
-        sudo('npm install')
+        run('npm install')
 
 
 @task

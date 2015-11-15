@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-NODE_ENV=production node app.js
+NODE_ENV=production nodejs app.js
