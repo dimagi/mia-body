@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-NODE_ENV=production nodejs app.js
+NODE_ENV=default nodejs app.js

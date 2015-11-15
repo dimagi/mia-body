@@ -12,7 +12,6 @@ def update_code():
     with cd(env.code_root):
         run('git remote prune origin')
         run('git pull origin master')
-        run("git clean -ffd")
 
 
 def install_deps():
@@ -41,6 +40,7 @@ def deploy():
     print white('You are now deploying Mia!!')
     try:
         execute(update_code)
+        execute(install_deps)
         execute(restart_services)
     except Exception:
         print red('Mia has failed to deploy')
