@@ -1,8 +1,11 @@
 var express = require('express');
+var config = require('config');
+var exec = require('child_process').exec
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+  say('Hello my name is Mia!');
+  res.send('Hello my name is Mia!');
 });
 
 var server = app.listen(3000, function() {
@@ -11,3 +14,8 @@ var server = app.listen(3000, function() {
 
   console.log('Example app listening at http://%s:%s', host, port);
 });
+
+function say(phrase) {
+  exec(config.get('Speak.cmd') + ' ' + phrase, log);
+}
+function log(error, stdout, stderr) { console.log(stdout); }

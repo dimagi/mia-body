@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dimagi/mia-body#readme",
   "dependencies": {
+    "config": "^1.16.0",
     "express": "^4.13.3"
   }
 }
