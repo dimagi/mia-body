@@ -1,4 +1,5 @@
 var express = require('express');
+var shellescape = require('shell-escape');
 var config = require('config');
 var exec = require('child_process').exec
 var app = express();
@@ -16,6 +17,8 @@ var server = app.listen(3000, function() {
 });
 
 function say(phrase) {
-  exec(config.get('Speak.cmd') + ' "' + phrase + '"', log);
+  var args = config.get('Speak.cmd').split(' ').concat([' "' + phrase + '"']);
+  console.log(args);
+  exec(shellescape(args), log);
 }
-function log(error, stdout, stderr) { console.log(stdout); }
+function log(error, stdout, stderr) { console.log(stdout);console.log(stderr) }
