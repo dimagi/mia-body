@@ -1,0 +1,22 @@
+{
+  "name": "mia-body",
+  "version": "1.0.0",
+  "description": "Mia's corporal form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimagi/mia-body.git"
+  },
+  "author": "Ben Rudolph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimagi/mia-body/issues"
+  },
+  "homepage": "https://github.com/dimagi/mia-body#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
