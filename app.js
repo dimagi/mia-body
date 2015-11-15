@@ -5,8 +5,23 @@ var exec = require('child_process').exec
 var app = express();
 
 app.get('/', function(req, res) {
-  say('Hello my name is Mia!');
-  res.send('Hello my name is Mia!');
+  var phrase = 'Hello my name is Mia!'
+  say(phrase);
+  res.send(phrase);
+});
+
+app.get('/whostheman/:name', function(req, res) {
+  var name = req.params.name
+  var phrase = name + '! ' + name + '! He is the man! If he cannot do it, no one can!'
+  say(phrase);
+  res.send(phrase);
+});
+
+app.get('/whosthewoman/:name', function(req, res) {
+  var name = req.params.name
+  var phrase = name + '! ' + name + '! She is the woman! If she cannot do it, no one can!'
+  say(phrase);
+  res.send(phrase);
 });
 
 var server = app.listen(3000, function() {
