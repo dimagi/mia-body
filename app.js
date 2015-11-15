@@ -16,6 +16,6 @@ var server = app.listen(3000, function() {
 });
 
 function say(phrase) {
-  exec(config.get('Speak.cmd') + ' ' + phrase, log);
+  exec(config.get('Speak.cmd') + ' "' + phrase + '"', log);
 }
 function log(error, stdout, stderr) { console.log(stdout); }
